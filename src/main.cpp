@@ -1,16 +1,22 @@
-#include <test.h>
-#include "raylib.h"
+#include <raylib.h>
+#include "simulation.h"
 
 int main(void)
 {
+    Simulation sim{100, 200};
+
+    
     InitWindow(800, 450, "raylib example - basic window");
+
+    
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
-        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+
+        DrawText(TextFormat("You have a simulatino of size %d x %d", sim.height, sim.width), 190, 200, 20, BLUE);
 
         EndDrawing();
     }
